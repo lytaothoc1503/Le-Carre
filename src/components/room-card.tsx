@@ -5,16 +5,28 @@ import type { Lang } from "@/lib/site";
 export function RoomCard({ room, lang }: { room: RoomLayout; lang: Lang }) {
   const c = t(lang);
 
+  const base = room.image.replace(/\.webp$/, "");
+  const sizes = "(min-width: 768px) 360px, 85vw";
+
   return (
     <article className="flex h-full flex-col">
       <a href={room.detailUrl} className="block overflow-hidden rounded-2xl">
         <picture>
-          <source type="image/avif" srcSet={room.image.replace(".webp", ".avif")} />
+          <source
+            type="image/avif"
+            srcSet={`${base}-480.avif 480w, ${base}-800.avif 800w`}
+            sizes={sizes}
+          />
+          <source
+            type="image/webp"
+            srcSet={`${base}-480.webp 480w, ${base}-800.webp 800w`}
+            sizes={sizes}
+          />
           <img
-            src={room.image}
+            src={`${base}-480.webp`}
             alt={room.alt[lang]}
-            width={room.width}
-            height={room.height}
+            width={480}
+            height={320}
             loading="lazy"
             decoding="async"
             className="aspect-[3/2] w-full object-cover transition duration-500 hover:scale-105"

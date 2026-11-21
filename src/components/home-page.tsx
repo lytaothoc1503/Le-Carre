@@ -19,12 +19,12 @@ export function HomePage({ lang }: { lang: Lang }) {
           <picture>
             <source
               type="image/avif"
-              srcSet="/media/hero-pool-800.avif 800w, /media/hero-pool-1280.avif 1280w"
+              srcSet="/media/hero-pool-480.avif 480w, /media/hero-pool-800.avif 800w, /media/hero-pool-1280.avif 1280w"
               sizes="100vw"
             />
             <source
               type="image/webp"
-              srcSet="/media/hero-pool-800.webp 800w, /media/hero-pool-1280.webp 1280w"
+              srcSet="/media/hero-pool-480.webp 480w, /media/hero-pool-800.webp 800w, /media/hero-pool-1280.webp 1280w"
               sizes="100vw"
             />
             <img
@@ -78,9 +78,18 @@ export function HomePage({ lang }: { lang: Lang }) {
           <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 lg:grid-cols-2">
             <div className="lg:order-2">
               <picture>
-                <source type="image/avif" srcSet="/media/pool-960.avif" />
+                <source
+                  type="image/avif"
+                  srcSet="/media/pool-480.avif 480w, /media/pool-800.avif 800w"
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                />
+                <source
+                  type="image/webp"
+                  srcSet="/media/pool-480.webp 480w, /media/pool-800.webp 800w"
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                />
                 <img
-                  src="/media/pool-960.webp"
+                  src="/media/pool-800.webp"
                   alt={c.poolTitle}
                   width={960}
                   height={640}
@@ -101,9 +110,18 @@ export function HomePage({ lang }: { lang: Lang }) {
         <section className="border-b border-line bg-paper">
           <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 lg:grid-cols-2">
             <picture>
-              <source type="image/avif" srcSet="/media/dining-960.avif" />
+              <source
+                type="image/avif"
+                srcSet="/media/dining-480.avif 480w, /media/dining-800.avif 800w"
+                sizes="(min-width: 1024px) 560px, 100vw"
+              />
+              <source
+                type="image/webp"
+                srcSet="/media/dining-480.webp 480w, /media/dining-800.webp 800w"
+                sizes="(min-width: 1024px) 560px, 100vw"
+              />
               <img
-                src="/media/dining-960.webp"
+                src="/media/dining-800.webp"
                 alt={c.dineTitle}
                 width={960}
                 height={640}
