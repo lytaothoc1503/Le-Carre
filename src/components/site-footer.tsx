@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { t } from "@/lib/copy";
 import { bookingEngineUrl } from "@/content/settings";
-import { ADDRESS, localize, type Lang } from "@/lib/site";
+import { ADDRESS, CONTACT, localize, type Lang } from "@/lib/site";
 
 export function SiteFooter({ lang }: { lang: Lang }) {
   const c = t(lang);
@@ -39,16 +39,26 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           <p className="text-xs tracking-widest text-ivory/60 uppercase">{c.footerVisit}</p>
           <ul className="mt-3 space-y-2 text-sm text-ivory/85">
             <li>
-              {c.phone}: {c.pending}
+              <a href={`tel:${CONTACT.phoneTel}`} className="underline-offset-4 hover:underline">
+                {c.phone}: {CONTACT.phoneDisplay}
+              </a>
             </li>
             <li>
-              {c.email}: {c.pending}
+              <a href={`mailto:${CONTACT.email}`} className="underline-offset-4 hover:underline">
+                {c.email}: {CONTACT.email}
+              </a>
             </li>
             <li>
               {c.chat}: {c.pending}
             </li>
             <li>
-              {c.social}: {c.socialNote}
+              <a href={CONTACT.facebook} className="underline-offset-4 hover:underline">
+                Facebook
+              </a>
+              {" · "}
+              <a href={CONTACT.tiktok} className="underline-offset-4 hover:underline">
+                TikTok
+              </a>
             </li>
           </ul>
         </div>

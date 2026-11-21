@@ -1,4 +1,4 @@
-import { absolute, localize, SITE_NAME, SITE_ORIGIN, type Lang } from "@/lib/site";
+import { absolute, CONTACT, localize, SITE_NAME, SITE_ORIGIN, type Lang } from "@/lib/site";
 
 const HOTEL_ID = `${SITE_ORIGIN}/#hotel`;
 
@@ -51,6 +51,9 @@ function hotelNode() {
     "@id": HOTEL_ID,
     name: SITE_NAME,
     url: absolute("/"),
+    telephone: CONTACT.phoneTel,
+    email: CONTACT.email,
+    sameAs: [CONTACT.facebook, CONTACT.tiktok],
     description:
       "Boutique hotel of 50 rooms at 44–54 Lê Lợi, Thuận Hóa ward, Huế. A modern address for Hue’s heritage.",
     address: {

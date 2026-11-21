@@ -10,6 +10,15 @@ export const ADDRESS = {
   country: "Việt Nam",
 };
 
+/** Public contacts from the official Facebook page. WhatsApp and Zalo are still unconfirmed. */
+export const CONTACT = {
+  phoneDisplay: "+84 234 3833 999",
+  phoneTel: "+842343833999",
+  email: "info@lecarre.vn",
+  facebook: "https://www.facebook.com/lecarrehuehotel",
+  tiktok: "https://www.tiktok.com/@lecarrehue",
+};
+
 export type Lang = "vi" | "en";
 
 export function isLang(value: string): value is Lang {
