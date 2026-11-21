@@ -16,6 +16,8 @@ export type RoomLayout = {
   bedLabel: { vi: string; en: string };
   view: ViewKind | "unlisted";
   viewLabel: { vi: string; en: string };
+  bookingUrl: string;
+  detailUrl: string;
 };
 
 /** Specs published on lecarre.vn, the site linked from the hotel's Facebook page. No rates. */
@@ -36,6 +38,8 @@ export const roomLayouts: RoomLayout[] = [
     bedLabel: { vi: "2 giường đơn 1,2 × 2 m", en: "2 single beds, 1.2 × 2 m" },
     view: "river",
     viewLabel: { vi: "Sông Hương", en: "Perfume River" },
+    bookingUrl: "https://lecarre.vn/booking?product_id=7&room-type=5082934",
+    detailUrl: "https://lecarre.vn/rooms-suites/deluxe/grand-deluxe-vista-twin-room",
   },
   {
     id: "vista-double",
@@ -53,6 +57,8 @@ export const roomLayouts: RoomLayout[] = [
     bedLabel: { vi: "1 giường queen 1,6 × 2 m", en: "1 queen bed, 1.6 × 2 m" },
     view: "river",
     viewLabel: { vi: "Sông Hương", en: "Perfume River" },
+    bookingUrl: "https://lecarre.vn/booking?product_id=6&room-type=5082933",
+    detailUrl: "https://lecarre.vn/rooms-suites/deluxe/grand-deluxe-vista-double-room",
   },
   {
     id: "cozy-double",
@@ -70,6 +76,8 @@ export const roomLayouts: RoomLayout[] = [
     bedLabel: { vi: "1 giường queen 1,6 × 2 m", en: "1 queen bed, 1.6 × 2 m" },
     view: "unlisted",
     viewLabel: { vi: "Không ghi view", en: "View not listed" },
+    bookingUrl: "https://lecarre.vn/booking?product_id=5&room-type=5082930",
+    detailUrl: "https://lecarre.vn/rooms-suites/deluxe/deluxe-cozy-double-room",
   },
   {
     id: "cozy-twin",
@@ -87,6 +95,8 @@ export const roomLayouts: RoomLayout[] = [
     bedLabel: { vi: "2 giường đơn 1,2 × 2 m", en: "2 single beds, 1.2 × 2 m" },
     view: "unlisted",
     viewLabel: { vi: "Không ghi view", en: "View not listed" },
+    bookingUrl: "https://lecarre.vn/booking?product_id=4&room-type=5082931",
+    detailUrl: "https://lecarre.vn/rooms-suites/deluxe/deluxe-cozy-twin-room",
   },
   {
     id: "studio",
@@ -104,6 +114,8 @@ export const roomLayouts: RoomLayout[] = [
     bedLabel: { vi: "1 giường queen 1,8 × 2 m", en: "1 queen bed, 1.8 × 2 m" },
     view: "unlisted",
     viewLabel: { vi: "Không ghi view", en: "View not listed" },
+    bookingUrl: "https://lecarre.vn/booking?product_id=3&room-type=5082935",
+    detailUrl: "https://lecarre.vn/rooms-suites/suites/le-carre-studio-suite",
   },
   {
     id: "signature",
@@ -121,6 +133,8 @@ export const roomLayouts: RoomLayout[] = [
     bedLabel: { vi: "Loại giường không ghi rõ", en: "Bed type not listed" },
     view: "either",
     viewLabel: { vi: "Phố hoặc sông", en: "City or river" },
+    bookingUrl: "https://lecarre.vn/booking?product_id=2&room-type=5082936%2C5082937",
+    detailUrl: "https://lecarre.vn/rooms-suites/suites/le-carre-signature-suite",
   },
   {
     id: "metro",
@@ -138,6 +152,8 @@ export const roomLayouts: RoomLayout[] = [
     bedLabel: { vi: "1 giường queen 1,6 × 2 m", en: "1 queen bed, 1.6 × 2 m" },
     view: "city",
     viewLabel: { vi: "Thành phố", en: "City" },
+    bookingUrl: "https://lecarre.vn/booking?product_id=1&room-type=5082932",
+    detailUrl: "https://lecarre.vn/rooms-suites/deluxe/premier-deluxe-metro-room",
   },
 ];
 

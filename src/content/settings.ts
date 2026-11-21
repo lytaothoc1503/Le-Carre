@@ -3,7 +3,7 @@
  * Leave it empty until then. Components must read this file, not their own URL.
  */
 export const siteSettings = {
-  bookingEngineUrl: "",
+  bookingEngineUrl: "https://lecarre.vn/booking",
   bookingParams: {
     checkIn: "checkin",
     checkOut: "checkout",

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookingBar } from "@/components/booking-bar";
+import { ExelySearch } from "@/components/exely-search";
 import { RoomCard } from "@/components/room-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -20,35 +20,32 @@ export function HomePage({ lang }: { lang: Lang }) {
           <picture>
             <source
               type="image/avif"
-              srcSet="/media/hero-800.avif 800w, /media/hero-1280.avif 1280w"
+              srcSet="/media/hero-pool-800.avif 800w, /media/hero-pool-1280.avif 1280w"
               sizes="100vw"
             />
             <source
               type="image/webp"
-              srcSet="/media/hero-800.webp 800w, /media/hero-1280.webp 1280w"
+              srcSet="/media/hero-pool-800.webp 800w, /media/hero-pool-1280.webp 1280w"
               sizes="100vw"
             />
             <img
-              src="/media/hero-800.webp"
+              src="/media/hero-pool-800.webp"
               alt={c.heroNote}
-              width={800}
-              height={450}
+              width={1280}
+              height={720}
               fetchPriority="high"
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-t from-ivory via-ivory/15 to-transparent" />
-          <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-end gap-3 px-5 pt-20 pb-24 md:pb-8 lg:gap-6 lg:pt-28">
-            <div className="max-w-3xl">
-              <p className="text-xs tracking-widest text-wood uppercase">{c.eyebrow}</p>
-              <h1 className="rise mt-2 text-3xl text-ink sm:text-6xl">{c.heroTitle}</h1>
-              <p className="mt-2 line-clamp-2 max-w-xl text-sm text-ink sm:mt-4 sm:line-clamp-none sm:text-lg">
-                {c.heroSub}
-              </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/25" />
+          <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-end gap-5 px-5 pt-24 pb-28 md:pb-10">
+            <div className="max-w-3xl text-white">
+              <p className="text-xs tracking-[0.2em] uppercase">{c.eyebrow}</p>
+              <h1 className="rise mt-3 text-4xl text-white sm:text-6xl">{c.heroTitle}</h1>
+              <p className="mt-3 max-w-xl text-sm text-white/90 sm:text-lg">{c.heroSub}</p>
             </div>
-            <BookingBar lang={lang} tone="overlay" />
-            <p className="hidden text-xs text-muted sm:block">{c.heroNote}</p>
+            <ExelySearch lang={lang} />
           </div>
         </section>
 
@@ -69,9 +66,11 @@ export function HomePage({ lang }: { lang: Lang }) {
             <h2 className="mt-3 text-4xl">{c.stayTitle}</h2>
             <p className="mt-4 text-muted">{c.stayBody}</p>
           </div>
-          <div className="mt-14 grid gap-x-12 gap-y-16 md:grid-cols-2">
-            {roomLayouts.slice(0, 4).map((room) => (
-              <RoomCard key={room.id} room={room} lang={lang} />
+          <div className="mt-10 flex snap-x gap-6 overflow-x-auto pb-4">
+            {roomLayouts.map((room) => (
+              <div key={room.id} className="w-[82%] shrink-0 snap-start sm:w-80">
+                <RoomCard room={room} lang={lang} />
+              </div>
             ))}
           </div>
           <Link

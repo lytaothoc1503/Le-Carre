@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import { BookingBar } from "@/components/booking-bar";
+import { ExelySearch } from "@/components/exely-search";
 import { RoomCard } from "@/components/room-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -35,7 +35,7 @@ export function RoomsPage({ lang }: { lang: Lang }) {
         <h1 className="mt-3 max-w-3xl text-4xl sm:text-5xl">{c.roomsTitle}</h1>
         <p className="mt-4 max-w-2xl text-muted">{c.roomsBody}</p>
         <div className="mt-8">
-          <BookingBar lang={lang} id="dat-phong" />
+          <ExelySearch lang={lang} id="dat-phong" />
         </div>
         <form className="mt-8 grid gap-4 border border-line bg-paper p-4 sm:grid-cols-2 lg:grid-cols-4">
           <Filter label={c.filterGuests} value={filters.guests} onChange={(value) => set("guests", value as RoomFilters["guests"])}>

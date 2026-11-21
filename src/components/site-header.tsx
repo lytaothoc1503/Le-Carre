@@ -10,31 +10,30 @@ export function SiteHeader({ lang, path }: { lang: Lang; path: "/" | "/phong" })
 
   return (
     <>
-    <header className="sticky top-0 z-40 border-b border-line bg-ivory/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 bg-wine text-paper">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
         <Link to={localize(lang, "/")} className="group min-h-11 leading-none">
-          <span className="font-serif text-xl tracking-tight text-ink">Le Carré</span>
-          <span className="mt-1 block text-xs tracking-widest text-wood uppercase">Huế</span>
+          <img src="/brand-logo.svg" alt="Le Carré Huế" width={128} height={88} className="h-11 w-auto" />
         </Link>
         <nav className="hidden items-center gap-7 text-sm md:flex" aria-label={c.navHome}>
-          <Link to={localize(lang, "/")} className="min-h-11 leading-[2.75rem] text-ink">
+          <Link to={localize(lang, "/")} className="min-h-11 leading-[2.75rem] text-paper">
             {c.navHome}
           </Link>
-          <Link to={localize(lang, "/phong")} className="min-h-11 leading-[2.75rem] text-ink">
+          <Link to={localize(lang, "/phong")} className="min-h-11 leading-[2.75rem] text-paper">
             {c.navRooms}
           </Link>
           <Link
             to={localize(other, path)}
             hrefLang={other}
             lang={other}
-            className="min-h-11 leading-[2.75rem] tracking-widest text-muted uppercase"
+            className="min-h-11 leading-[2.75rem] tracking-widest text-paper/80 uppercase"
             aria-label={c.langLabel}
           >
             {c.langName}
           </Link>
           <a
             href="#dat-phong"
-            className="inline-flex min-h-11 items-center bg-son px-4 text-sm font-medium text-paper hover:bg-son-deep"
+            className="inline-flex min-h-11 items-center rounded-full bg-gold px-5 text-sm font-semibold text-ink"
           >
             {c.book}
           </a>
@@ -42,7 +41,7 @@ export function SiteHeader({ lang, path }: { lang: Lang; path: "/" | "/phong" })
         <div className="flex items-center gap-2 md:hidden">
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center border border-line"
+            className="inline-flex size-11 items-center justify-center border border-white/30 text-paper"
             aria-expanded={open}
             aria-controls="site-menu"
             onClick={() => setOpen((value) => !value)}
@@ -53,7 +52,7 @@ export function SiteHeader({ lang, path }: { lang: Lang; path: "/" | "/phong" })
         </div>
       </div>
       {open ? (
-        <nav id="site-menu" className="grid border-t border-line px-5 py-3 md:hidden">
+        <nav id="site-menu" className="grid border-t border-white/15 px-5 py-3 md:hidden">
           <Link to={localize(lang, "/")} className="min-h-11 leading-[2.75rem]" onClick={() => setOpen(false)}>
             {c.navHome}
           </Link>
@@ -72,9 +71,9 @@ export function SiteHeader({ lang, path }: { lang: Lang; path: "/" | "/phong" })
     </header>
       <a
         href="#dat-phong"
-        className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-ivory px-4 pt-3 pb-3 md:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 bg-wine px-4 pt-3 pb-3 md:hidden"
       >
-        <span className="flex min-h-12 items-center justify-center bg-son text-base font-semibold text-paper">
+        <span className="flex min-h-12 items-center justify-center rounded-full bg-gold text-base font-semibold text-ink">
           {c.book}
         </span>
       </a>
