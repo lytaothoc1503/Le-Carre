@@ -42,7 +42,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-end gap-3 px-5 pt-20 pb-24 md:pb-8 lg:gap-6 lg:pt-28">
             <div className="max-w-3xl">
               <p className="text-xs tracking-widest text-wood uppercase">{c.eyebrow}</p>
-              <h1 className="mt-2 text-3xl text-ink sm:text-6xl">{c.heroTitle}</h1>
+              <h1 className="rise mt-2 text-3xl text-ink sm:text-6xl">{c.heroTitle}</h1>
               <p className="mt-2 line-clamp-2 max-w-xl text-sm text-ink sm:mt-4 sm:line-clamp-none sm:text-lg">
                 {c.heroSub}
               </p>
@@ -70,7 +70,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             <p className="mt-4 text-muted">{c.stayBody}</p>
           </div>
           <div className="mt-14 grid gap-x-12 gap-y-16 md:grid-cols-2">
-            {roomLayouts.map((room) => (
+            {roomLayouts.slice(0, 4).map((room) => (
               <RoomCard key={room.id} room={room} lang={lang} />
             ))}
           </div>
@@ -83,6 +83,30 @@ export function HomePage({ lang }: { lang: Lang }) {
         </section>
 
         <section className="border-y border-line bg-paper">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 lg:grid-cols-2">
+            <div className="lg:order-2">
+              <picture>
+                <source type="image/avif" srcSet="/media/pool-960.avif" />
+                <img
+                  src="/media/pool-960.webp"
+                  alt={c.poolTitle}
+                  width={960}
+                  height={640}
+                  loading="lazy"
+                  decoding="async"
+                  className="frame-photo w-full"
+                />
+              </picture>
+            </div>
+            <div>
+              <p className="text-xs tracking-widest text-wood uppercase">{c.poolKicker}</p>
+              <h2 className="mt-3 text-4xl">{c.poolTitle}</h2>
+              <p className="mt-4 text-muted">{c.poolBody}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-line bg-paper">
           <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 lg:grid-cols-2">
             <picture>
               <source type="image/avif" srcSet="/media/dining-960.avif" />
@@ -103,6 +127,12 @@ export function HomePage({ lang }: { lang: Lang }) {
               <p className="mt-4 text-sm">{c.breakfast}</p>
             </div>
           </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-5 py-16">
+          <p className="text-xs tracking-widest text-wood uppercase">{c.meetKicker}</p>
+          <h2 className="mt-3 max-w-xl text-4xl">{c.meetTitle}</h2>
+          <p className="mt-4 max-w-2xl text-muted">{c.meetBody}</p>
         </section>
 
         <section className="mx-auto grid max-w-6xl gap-8 px-5 py-16 lg:grid-cols-2">

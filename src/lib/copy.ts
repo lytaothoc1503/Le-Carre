@@ -87,7 +87,14 @@ export const copy = {
     engine: "Booking engine",
     sitemap: "Sơ đồ trang",
     opened: "Khai trương 2025",
+    poolKicker: "Bể bơi",
+    poolTitle: "Hồ bơi ngoài trời, tầng 5",
+    poolBody: "Mở cửa 6:00–22:00. Hồ bơi trên mái, nhìn phố và có pool bar.",
     breakfast: "Có bữa sáng",
+    meetKicker: "Sự kiện",
+    meetTitle: "Sảnh 240 khách",
+    meetBody:
+      "Trang chính công bố một sảnh đổi được bố trí, khu tiếp khách riêng, âm thanh, LED và livestream. Chi tiết gói hội nghị [CẦN XÁC NHẬN].",
     rights: "Le Carré Huế",
   },
   en: {
@@ -177,7 +184,14 @@ export const copy = {
     engine: "Booking engine",
     sitemap: "Sitemap",
     opened: "Opened 2025",
+    poolKicker: "Pool",
+    poolTitle: "Outdoor pool, fifth floor",
+    poolBody: "Open 6:00–22:00. A rooftop pool over the street, with a pool bar.",
     breakfast: "Breakfast is served",
+    meetKicker: "Events",
+    meetTitle: "A hall for 240 guests",
+    meetBody:
+      "The official site lists one transformable hall, a private reception, AV, LED and livestream. Event packages [TO CONFIRM].",
     rights: "Le Carré Huế",
   },
 } as const;
