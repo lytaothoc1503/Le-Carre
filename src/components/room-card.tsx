@@ -25,15 +25,15 @@ export function RoomCard({ room, lang }: { room: RoomLayout; lang: Lang }) {
         <h3 className="font-serif text-2xl text-ink">{room.name[lang]}</h3>
         <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted">
           <span>
-            <i className="fa-solid fa-expand me-1" aria-hidden="true" />
+            <i className="fa-solid fa-expand mr-1" aria-hidden="true" />
             {room.sizeM2} m²
           </span>
           <span>
-            <i className="fa-solid fa-bed me-1" aria-hidden="true" />
+            <i className="fa-solid fa-bed mr-1" aria-hidden="true" />
             {room.bedLabel[lang]}
           </span>
           <span>
-            <i className="fa-solid fa-user me-1" aria-hidden="true" />
+            <i className="fa-solid fa-user mr-1" aria-hidden="true" />
             {lang === "vi" ? `${room.guests} khách` : `${room.guests} guests`}
           </span>
         </p>

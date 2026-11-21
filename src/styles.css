@@ -178,6 +178,21 @@
   border-color: var(--color-wood);
 }
 
+.rooms-suites-carousel.owl-carousel:not(.owl-loaded) {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+}
+
+.rooms-suites-carousel.owl-carousel:not(.owl-loaded) > div {
+  flex: 0 0 82%;
+}
+
+@media (min-width: 40rem) {
+  .rooms-suites-carousel.owl-carousel:not(.owl-loaded) > div {
+    flex-basis: 20rem;
+  }
+}
 .rooms-suites-carousel .owl-nav {
   display: flex;
   justify-content: flex-end;

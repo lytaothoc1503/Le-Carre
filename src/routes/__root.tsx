@@ -19,10 +19,7 @@ export const Route = createRootRoute({
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: "/fonts/brand-faces.css" },
-      { rel: "stylesheet", href: "/vendor/bootstrap/bootstrap.min.css" },
-      { rel: "stylesheet", href: "/vendor/owl/owl.carousel.min.css" },
-      { rel: "stylesheet", href: "/vendor/owl/owl.theme.default.min.css" },
-      { rel: "stylesheet", href: "/vendor/fontawesome/css/all.min.css" },
+      { rel: "stylesheet", href: "/vendor/fontawesome/css/icons.css" },
       { rel: "stylesheet", href: appCss },
       {
         rel: "preload",
@@ -43,15 +40,15 @@ export const Route = createRootRoute({
       {
         rel: "preload",
         as: "font",
-        href: "/fonts/sofia/sofia-400.woff",
-        type: "font/woff",
+        href: "/fonts/sofia/sofia-400.woff2",
+        type: "font/woff2",
         crossOrigin: "anonymous",
       },
       {
         rel: "preload",
         as: "font",
-        href: "/fonts/futura/futura-500.woff",
-        type: "font/woff",
+        href: "/fonts/futura/futura-500.woff2",
+        type: "font/woff2",
         crossOrigin: "anonymous",
       },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
