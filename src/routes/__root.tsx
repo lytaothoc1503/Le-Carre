@@ -19,27 +19,15 @@ export const Route = createRootRoute({
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: "/fonts/brand-faces.css" },
-      {
-        rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css",
-      },
+      { rel: "stylesheet", href: "/vendor/bootstrap/bootstrap.min.css" },
+      { rel: "stylesheet", href: "/vendor/owl/owl.carousel.min.css" },
+      { rel: "stylesheet", href: "/vendor/owl/owl.theme.default.min.css" },
+      { rel: "stylesheet", href: "/vendor/fontawesome/css/all.min.css" },
       { rel: "stylesheet", href: appCss },
       {
         rel: "preload",
         as: "image",
-        href: "/media/hero-800.avif",
+        href: "/media/hero-pool-800.avif",
         type: "image/avif",
         fetchPriority: "high",
         media: "(max-width: 767px)",
@@ -47,7 +35,7 @@ export const Route = createRootRoute({
       {
         rel: "preload",
         as: "image",
-        href: "/media/hero-1280.avif",
+        href: "/media/hero-pool-1280.avif",
         type: "image/avif",
         fetchPriority: "high",
         media: "(min-width: 768px)",
