@@ -23,22 +23,6 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: appCss },
       {
         rel: "preload",
-        as: "image",
-        href: "/media/hero-pool-800.avif",
-        type: "image/avif",
-        fetchPriority: "high",
-        media: "(max-width: 767px)",
-      },
-      {
-        rel: "preload",
-        as: "image",
-        href: "/media/hero-pool-1280.avif",
-        type: "image/avif",
-        fetchPriority: "high",
-        media: "(min-width: 768px)",
-      },
-      {
-        rel: "preload",
         as: "font",
         href: "/fonts/sofia/sofia-400.woff2",
         type: "font/woff2",
@@ -65,6 +49,15 @@ function RootShell() {
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          href="/media/hero-pool-800.avif"
+          imageSrcSet="/media/hero-pool-480.avif 480w, /media/hero-pool-800.avif 800w, /media/hero-pool-1280.avif 1280w"
+          imageSizes="100vw"
+          fetchPriority="high"
+        />
         <HeadContent />
       </head>
       <body>

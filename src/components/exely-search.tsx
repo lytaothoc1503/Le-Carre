@@ -11,19 +11,34 @@ export function ExelySearch({ lang, id = "dat-phong" }: { lang: Lang; id?: strin
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!document.getElementById("exely-boot")) {
-      const script = document.createElement("script");
-      script.id = "exely-boot";
-      script.src = lang === "vi" ? "/exely-vi.js" : "/exely-en.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    const box = document.getElementById("be-search-form");
-    const timer = window.setInterval(() => {
-      if (box && box.childElementCount > 0) setReady(true);
-    }, 400);
-    const stop = window.setTimeout(() => window.clearInterval(timer), 8000);
+    let started = false;
+    let timer = 0;
+    let stop = 0;
+    const start = () => {
+      if (started) return;
+      started = true;
+      if (!document.getElementById("exely-boot")) {
+        const script = document.createElement("script");
+        script.id = "exely-boot";
+        script.src = lang === "vi" ? "/exely-vi.js" : "/exely-en.js";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+      const box = document.getElementById("be-search-form");
+      timer = window.setInterval(() => {
+        if (box && box.childElementCount > 0) setReady(true);
+      }, 400);
+      stop = window.setTimeout(() => window.clearInterval(timer), 8000);
+    };
+    let idleId = 0;
+    const afterHero = () => {
+      idleId = window.requestIdleCallback(start, { timeout: 1200 });
+    };
+    if (document.readyState === "complete") afterHero();
+    else window.addEventListener("load", afterHero, { once: true });
     return () => {
+      window.removeEventListener("load", afterHero);
+      if (idleId) window.cancelIdleCallback(idleId);
       window.clearInterval(timer);
       window.clearTimeout(stop);
     };

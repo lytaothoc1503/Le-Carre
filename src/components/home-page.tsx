@@ -33,7 +33,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               width={1280}
               height={720}
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
           </picture>
