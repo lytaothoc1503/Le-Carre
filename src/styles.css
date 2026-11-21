@@ -68,14 +68,14 @@
 @theme {
   --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", serif;
   --font-sans: "Be Vietnam Pro", "Segoe UI", sans-serif;
-  --color-ivory: #f3eee6;
-  --color-paper: #fbf8f3;
+  --color-ivory: #f4efe6;
+  --color-paper: #fbf7f1;
   --color-ink: #1c1916;
   --color-muted: #4e4741;
-  --color-wood: #6a4632;
-  --color-son: #8e2f2a;
-  --color-son-deep: #6f241f;
-  --color-line: #e2d6c8;
+  --color-wood: #8a6232;
+  --color-son: #c4372a;
+  --color-son-deep: #8e241c;
+  --color-line: #e4d5c4;
   --color-scrim: #1c1916;
 }
 

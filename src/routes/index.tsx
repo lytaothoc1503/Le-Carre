@@ -5,7 +5,7 @@ import { absolute } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Le Carré Huế — Một địa chỉ đương đại cho di sản Huế" },
+      { title: "Le Carré Huế — Di sản kinh thành, nhịp sống đương đại" },
       {
         name: "description",
         content:

@@ -52,8 +52,8 @@ export function RoomsPage({ lang }: { lang: Lang }) {
           </Filter>
           <Filter label={c.filterView} value={filters.view} onChange={(value) => set("view", value as RoomFilters["view"])}>
             <option value="all">{c.all}</option>
+            <option value="river">{c.viewRiver}</option>
             <option value="city">{c.viewCity}</option>
-            <option value="street">{c.viewStreet}</option>
           </Filter>
           <Filter label={c.filterSize} value={filters.size} onChange={(value) => set("size", value as RoomFilters["size"])}>
             <option value="all">{c.all}</option>

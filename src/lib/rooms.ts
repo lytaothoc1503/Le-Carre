@@ -1,49 +1,150 @@
+import type { Lang } from "@/lib/site";
+
+export type BedKind = "double" | "twin";
+export type ViewKind = "river" | "city" | "either";
+
 export type RoomLayout = {
   id: string;
+  name: { vi: string; en: string };
   image: string;
   width: number;
   height: number;
   alt: { vi: string; en: string };
+  sizeM2: number;
+  guests: number;
+  bed: BedKind | "unlisted";
+  bedLabel: { vi: string; en: string };
+  view: ViewKind | "unlisted";
+  viewLabel: { vi: string; en: string };
 };
 
-/** Layout samples only. No invented size, occupancy, bed, view or rate. */
+/** Specs published on lecarre.vn, the site linked from the hotel's Facebook page. No rates. */
 export const roomLayouts: RoomLayout[] = [
   {
-    id: "01",
-    image: "/media/room-linen-960.webp",
+    id: "vista-twin",
+    name: { vi: "Grand Deluxe Vista Twin", en: "Grand Deluxe Vista Twin" },
+    image: "/media/room-vista-twin.webp",
     width: 960,
     height: 640,
     alt: {
-      vi: "Ảnh minh họa phòng ngủ gam kem và gỗ tối, chưa phải ảnh phòng chính thức",
-      en: "Illustrative bedroom in cream and dark wood, not an official room photo",
+      vi: "Grand Deluxe Vista Twin tại Le Carré Huế, giường đơn và dải giường đỏ son",
+      en: "Grand Deluxe Vista Twin at Le Carré Huế, twin beds and a lacquer-red runner",
     },
+    sizeM2: 23,
+    guests: 2,
+    bed: "twin",
+    bedLabel: { vi: "2 giường đơn 1,2 × 2 m", en: "2 single beds, 1.2 × 2 m" },
+    view: "river",
+    viewLabel: { vi: "Sông Hương", en: "Perfume River" },
   },
   {
-    id: "02",
-    image: "/media/room-window-960.webp",
+    id: "vista-double",
+    name: { vi: "Grand Deluxe Vista Double", en: "Grand Deluxe Vista Double" },
+    image: "/media/room-vista-double.webp",
     width: 960,
     height: 640,
     alt: {
-      vi: "Ảnh minh họa góc phòng nhìn ra phố, chưa phải ảnh phòng chính thức",
-      en: "Illustrative room corner toward the street, not an official room photo",
+      vi: "Grand Deluxe Vista Double tại Le Carré Huế",
+      en: "Grand Deluxe Vista Double at Le Carré Huế",
     },
+    sizeM2: 19,
+    guests: 2,
+    bed: "double",
+    bedLabel: { vi: "1 giường queen 1,6 × 2 m", en: "1 queen bed, 1.6 × 2 m" },
+    view: "river",
+    viewLabel: { vi: "Sông Hương", en: "Perfume River" },
   },
   {
-    id: "03",
-    image: "/media/room-linen-960.webp",
+    id: "cozy-double",
+    name: { vi: "Deluxe Cozy Double", en: "Deluxe Cozy Double" },
+    image: "/media/room-cozy-double.webp",
     width: 960,
     height: 640,
     alt: {
-      vi: "Ảnh minh họa không gian ngủ thứ ba, dùng để duyệt bố cục",
-      en: "Third illustrative sleeping space, used to review layout",
+      vi: "Deluxe Cozy Double tại Le Carré Huế",
+      en: "Deluxe Cozy Double at Le Carré Huế",
     },
+    sizeM2: 21,
+    guests: 3,
+    bed: "double",
+    bedLabel: { vi: "1 giường queen 1,6 × 2 m", en: "1 queen bed, 1.6 × 2 m" },
+    view: "unlisted",
+    viewLabel: { vi: "Không ghi view", en: "View not listed" },
+  },
+  {
+    id: "cozy-twin",
+    name: { vi: "Deluxe Cozy Twin", en: "Deluxe Cozy Twin" },
+    image: "/media/room-cozy-twin.webp",
+    width: 960,
+    height: 640,
+    alt: {
+      vi: "Deluxe Cozy Twin tại Le Carré Huế",
+      en: "Deluxe Cozy Twin at Le Carré Huế",
+    },
+    sizeM2: 24,
+    guests: 2,
+    bed: "twin",
+    bedLabel: { vi: "2 giường đơn 1,2 × 2 m", en: "2 single beds, 1.2 × 2 m" },
+    view: "unlisted",
+    viewLabel: { vi: "Không ghi view", en: "View not listed" },
+  },
+  {
+    id: "studio",
+    name: { vi: "Le Carré Studio Suite", en: "Le Carré Studio Suite" },
+    image: "/media/room-studio.webp",
+    width: 960,
+    height: 640,
+    alt: {
+      vi: "Le Carré Studio Suite",
+      en: "Le Carré Studio Suite",
+    },
+    sizeM2: 22,
+    guests: 3,
+    bed: "double",
+    bedLabel: { vi: "1 giường queen 1,8 × 2 m", en: "1 queen bed, 1.8 × 2 m" },
+    view: "unlisted",
+    viewLabel: { vi: "Không ghi view", en: "View not listed" },
+  },
+  {
+    id: "signature",
+    name: { vi: "Le Carré Signature Suite", en: "Le Carré Signature Suite" },
+    image: "/media/room-signature.webp",
+    width: 960,
+    height: 640,
+    alt: {
+      vi: "Le Carré Signature Suite, bồn tắm và cửa kính",
+      en: "Le Carré Signature Suite, with a soaking tub and glazed doors",
+    },
+    sizeM2: 40,
+    guests: 3,
+    bed: "unlisted",
+    bedLabel: { vi: "Loại giường không ghi rõ", en: "Bed type not listed" },
+    view: "either",
+    viewLabel: { vi: "Phố hoặc sông", en: "City or river" },
+  },
+  {
+    id: "metro",
+    name: { vi: "Premier Deluxe Metro Double", en: "Premier Deluxe Metro Double" },
+    image: "/media/room-metro.webp",
+    width: 960,
+    height: 640,
+    alt: {
+      vi: "Premier Deluxe Metro Double tại Le Carré Huế",
+      en: "Premier Deluxe Metro Double at Le Carré Huế",
+    },
+    sizeM2: 17,
+    guests: 2,
+    bed: "double",
+    bedLabel: { vi: "1 giường queen 1,6 × 2 m", en: "1 queen bed, 1.6 × 2 m" },
+    view: "city",
+    viewLabel: { vi: "Thành phố", en: "City" },
   },
 ];
 
 export type RoomFilters = {
   guests: "all" | "1" | "2" | "3" | "4";
   bed: "all" | "double" | "twin";
-  view: "all" | "city" | "street";
+  view: "all" | "river" | "city";
   size: "all" | "s" | "m" | "l";
 };
 
@@ -54,17 +155,24 @@ export const defaultFilters: RoomFilters = {
   size: "all",
 };
 
-export function filtersAreOpen(filters: RoomFilters): boolean {
-  return (
-    filters.guests !== "all" ||
-    filters.bed !== "all" ||
-    filters.view !== "all" ||
-    filters.size !== "all"
-  );
+function sizeBand(meters: number): RoomFilters["size"] {
+  if (meters >= 40) return "l";
+  if (meters >= 22) return "m";
+  return "s";
 }
 
-/** Confirmed inventory has no classified attributes, so any active filter matches nothing. */
 export function visibleRooms(filters: RoomFilters): RoomLayout[] {
-  if (filtersAreOpen(filters)) return [];
-  return roomLayouts;
+  return roomLayouts.filter((room) => {
+    if (filters.guests !== "all" && room.guests < Number(filters.guests)) return false;
+    if (filters.bed !== "all" && room.bed !== filters.bed) return false;
+    if (filters.view === "river" && room.view !== "river" && room.view !== "either") return false;
+    if (filters.view === "city" && room.view !== "city" && room.view !== "either") return false;
+    if (filters.size !== "all" && sizeBand(room.sizeM2) !== filters.size) return false;
+    return true;
+  });
+}
+
+export function roomLine(room: RoomLayout, lang: Lang): string {
+  const guests = lang === "vi" ? `${room.guests} khách` : `${room.guests} guests`;
+  return `${room.sizeM2} m² · ${room.bedLabel[lang]} · ${guests} · ${room.viewLabel[lang]}`;
 }
