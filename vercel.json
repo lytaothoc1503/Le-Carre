@@ -1,3 +1,10 @@
 {
-  "installCommand": "npm install --omit=dev --no-audit --no-fund"
+  "headers": [
+    {
+      "source": "/media/(.*).avif",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { useRouterState } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
+import { AvifCache } from "@/components/avif-cache";
 import { VendorScripts } from "@/components/vendor-scripts";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { langFromPath } from "@/lib/site";
@@ -69,6 +70,7 @@ function RootShell() {
           <Outlet />
         </AuthProvider>
         <VendorScripts />
+        <AvifCache />
         <Scripts />
       </body>
     </html>
