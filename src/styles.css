@@ -66,8 +66,8 @@
 }
 
 @theme {
-  --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", serif;
-  --font-sans: "Be Vietnam Pro", "Segoe UI", sans-serif;
+  --font-serif: "Futura", "Sofia Pro", "Be Vietnam Pro", sans-serif;
+  --font-sans: "Sofia Pro", "Be Vietnam Pro", "Segoe UI", sans-serif;
   --color-ivory: #f7f2ea;
   --color-paper: #fffdf8;
   --color-ink: #1a1210;
@@ -92,6 +92,10 @@
     font-family: var(--font-sans);
     font-size: 1.0625rem;
     line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   h1,
@@ -172,6 +176,21 @@
 
 .field:hover {
   border-color: var(--color-wood);
+}
+
+.rooms-suites-carousel .owl-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.rooms-suites-carousel .owl-nav button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: var(--color-wine) !important;
+  color: var(--color-paper) !important;
 }
 
 .frame-photo {

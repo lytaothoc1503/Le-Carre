@@ -1,11 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { ExelySearch } from "@/components/exely-search";
-import { RoomCard } from "@/components/room-card";
+import { RoomCarousel } from "@/components/room-carousel";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
 import { t } from "@/lib/copy";
-import { roomLayouts } from "@/lib/rooms";
 import { faqItems, pageSchema } from "@/lib/schema";
 import { localize, type Lang } from "@/lib/site";
 
@@ -66,13 +65,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             <h2 className="mt-3 text-4xl">{c.stayTitle}</h2>
             <p className="mt-4 text-muted">{c.stayBody}</p>
           </div>
-          <div className="mt-10 flex snap-x gap-6 overflow-x-auto pb-4">
-            {roomLayouts.map((room) => (
-              <div key={room.id} className="w-[82%] shrink-0 snap-start sm:w-80">
-                <RoomCard room={room} lang={lang} />
-              </div>
-            ))}
-          </div>
+          <RoomCarousel lang={lang} />
           <Link
             to={localize(lang, "/phong")}
             className="mt-8 inline-flex min-h-11 items-center border border-ink px-5 text-sm hover:bg-ink hover:text-paper"

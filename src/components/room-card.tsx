@@ -1,5 +1,5 @@
 import { t } from "@/lib/copy";
-import { roomLine, type RoomLayout } from "@/lib/rooms";
+import { type RoomLayout } from "@/lib/rooms";
 import type { Lang } from "@/lib/site";
 
 export function RoomCard({ room, lang }: { room: RoomLayout; lang: Lang }) {
@@ -23,7 +23,20 @@ export function RoomCard({ room, lang }: { room: RoomLayout; lang: Lang }) {
       </a>
       <div className="flex flex-1 flex-col pt-4">
         <h3 className="font-serif text-2xl text-ink">{room.name[lang]}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{roomLine(room, lang)}</p>
+        <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted">
+          <span>
+            <i className="fa-solid fa-expand me-1" aria-hidden="true" />
+            {room.sizeM2} m²
+          </span>
+          <span>
+            <i className="fa-solid fa-bed me-1" aria-hidden="true" />
+            {room.bedLabel[lang]}
+          </span>
+          <span>
+            <i className="fa-solid fa-user me-1" aria-hidden="true" />
+            {lang === "vi" ? `${room.guests} khách` : `${room.guests} guests`}
+          </span>
+        </p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <a
             href={room.bookingUrl}

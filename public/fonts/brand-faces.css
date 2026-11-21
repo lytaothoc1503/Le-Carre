@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-300.woff") format("woff");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-300i.woff") format("woff");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-400.woff") format("woff");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-300i.woff") format("woff");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-500.woff") format("woff");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-500i.woff") format("woff");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-700.woff") format("woff");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/sofia/sofia-700i.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/futura/futura-300.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/futura/futura-400.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/futura/futura-500.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/futura/futura-600.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/futura/futura-700.woff") format("woff");
+}
